@@ -1,0 +1,49 @@
+.containerApartamento {
+  width: 97%;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 1em;
+  text-align: center;
+  color: #2446ff;
+  margin: 30px;
+}
+
+.apartamento-form {
+  width: 92%;
+}
+
+.campo-select-borda {
+  border-bottom: 1px solid black;
+  padding: 2px;
+}
+
+.lista-consulta {
+  height: 40vh;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-confirmar {
+  background-color: #2446ff;
+  font-size: 0.6em;
+  margin-top: 15px;
+}
+
+.input-field {
+  margin-right: 20px;
+}
+
+.table-container {
+  margin-bottom: 120px;
+}
+
+.acao-excluir-column {
+  width: 50px; /* Defina a largura desejada */
+}

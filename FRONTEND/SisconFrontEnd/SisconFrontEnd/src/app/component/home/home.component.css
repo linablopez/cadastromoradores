@@ -1,0 +1,33 @@
+.containerHome {
+  margin: 30px 30px 30px 30px;
+}
+
+  .containerHome h1 {
+    font-size: 1em;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .containerHome hr {
+    border: none;
+    height: 3px;
+    width: 18em;
+    margin-left: 0px;
+    background-color: #2446FF;
+  }
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.mat-mdc-tab-group {
+  --mdc-tab-indicator-active-indicator-color: #2446FF;
+  --mat-tab-header-active-label-text-color: #2446FF;
+  --mat-tab-header-active-focus-label-text-color: #2446FF;
+  --mat-tab-header-active-hover-label-text-color: #2446FF;
+  --mat-tab-header-active-focus-indicator-color: #2446FF;
+  --mat-tab-header-active-hover-indicator-color: #2446FF;
+}

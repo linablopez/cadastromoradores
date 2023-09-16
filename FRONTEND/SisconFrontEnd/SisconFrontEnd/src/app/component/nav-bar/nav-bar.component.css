@@ -1,0 +1,55 @@
+.spacer {
+  flex: 1;
+}
+
+.logo_home {
+  cursor: pointer;
+  display: flex;
+}
+
+.toolbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: #2446ff;
+  color: white;
+  font-weight: 600;
+}
+
+  .toolbar svg {
+    margin: 0 16px;
+  }
+
+  .toolbar span {
+    margin-top: 2px;
+  }
+
+  .toolbar #nome-usuario {
+    margin: 0 16px;
+  }
+
+  .toolbar #sair {
+    margin: 0 16px;
+    color: white;
+    border: none;
+    background-color: #2446ff;
+    cursor: pointer;
+  }
+
+    .toolbar #sair:hover {
+      color: aqua;
+    }
+
+.container {
+  margin: 82px auto 32px;
+  max-width: 960px;
+}
+
+.image-menu {
+  max-width: 100px;
+  height: auto;
+  margin-right: 20px;
+}

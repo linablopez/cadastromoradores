@@ -1,0 +1,39 @@
+<div class="container-login">
+  <div class="login">
+    <div class="login-form">
+      <div class="login-logo">
+        <span>Sistema de Condomínios</span>
+      </div>
+      <div class="login-logo">
+        <img src="assets/login/logo-siscon.png" />
+      </div>
+      <div class="form">
+        <div class="messagem-login">
+          <span class="center">{{ loginInvalido }}</span>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input [(ngModel)]="usuario.usuario" id="usuario" type="text">
+            <label for="usuario" class="active">Usuário</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input [(ngModel)]="usuario.senha" id="senha" type="password" (keyup.enter)="realizarLogin()">
+            <label for="senha" class="active">Senha</label>
+          </div>
+        </div>
+        <div class="col s12 center-align">
+          <button class="btn waves-effect waves-light btnLoginColor" type="submit" name="action"
+                  (click)="realizarLogin()">
+            Acessar
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+      <p class="center">Versão 1.0.0</p>
+    </div>
+  </div>
+  <div class="login-imagem">
+  </div>
+</div>

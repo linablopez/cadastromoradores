@@ -1,0 +1,11 @@
+<div class="toolbar" role="banner" *ngIf="mostrarUsuario()">
+  <div class="logo_home" routerLink="/home">
+    <img class="image-menu" src="assets/login/logo-siscon-branco.png" />
+  </div>
+  <div class="spacer"></div>
+  <div style="display: flex;">
+    <p id="nome-usuario">{{ loginService.usuarioNome }}</p>
+    <span> |</span>
+    <button (click)="sair()" id="sair">Sair</button>
+  </div>
+</div>

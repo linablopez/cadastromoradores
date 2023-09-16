@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.26-alpha">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>0fa5cbb9-dfa2-4808-afb8-cec8a4a192e3</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupCommand>npm start</StartupCommand>
+    <JavaScriptTestFramework>Jasmine</JavaScriptTestFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\app\component\login\" />
+    <Folder Include="src\app\models\" />
+    <Folder Include="src\app\componentCustom\" />
+    <Folder Include="src\assets\login\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,32 @@
+.app-container {
+  height: 91vh;
+  margin: 0;
+}
+
+.app-sidenav {
+  width: 250px;
+}
+
+.label-links {
+  font-size: 0.9em;
+  word-wrap: break-word;
+  margin-left: 20px;
+  color: #2446ff;
+  cursor: pointer;
+}
+
+  .label-links:hover {
+    color: #00b6fd;
+  }
+
+.label-titulo {
+  color: #fb4400;
+  font-size: 0.7em;
+}
+
+.label-titulo-item {
+  margin-left: 9px;
+  color: #2446ff;
+  font-size: 0.6em;
+  font-weight: var(--mat-expansion-header-text-weight);
+}
