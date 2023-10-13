@@ -6,7 +6,7 @@
     </span>
   </div>
   <div class="apartamento-form">
-    <h1 style="font-size: 28px;"><strong>Apartamentos</strong></h1>
+    <h1 style="font-size: 28px;"><strong>Apartamento</strong></h1>
 
     <div class="center-content">
       <div class="input-field col s2 espaco">
@@ -25,7 +25,7 @@
         <label style="font-size: 1em;" class="active" for="andar">Prédio</label>
         <mat-form-field class="meu-form-field">
           <!--<mat-label>Prédio</mat-label>-->
-          <select matNativeControl required>
+          <select matNativeControl required [(ngModel)]="predioId">
             <option *ngFor="let predio of predios" [value]="predio.id">{{ predio.nomePredio }}</option>
           </select>
         </mat-form-field>

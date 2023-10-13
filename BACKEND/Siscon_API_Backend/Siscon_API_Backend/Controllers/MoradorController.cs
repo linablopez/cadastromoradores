@@ -14,11 +14,19 @@ namespace Siscon_API_Backend.Controllers
     public class MoradorController : ControllerBase
     {
         [HttpGet("v1/moradores")]
-        public async Task<IActionResult> GetAll([FromServices] SisconDataContext Dbcontext)
+        public async Task<IActionResult> GetAll([FromQuery] string? nomeMorador, [FromServices] SisconDataContext Dbcontext)
         {
             try
             {
-                var moradores = await Dbcontext.Moradores.AsNoTracking().Include(x => x.Sexo).Include(x => x.TipoDocumento).ToListAsync();
+                var morador = Dbcontext.Moradores.Include(x => x.Sexo).Include(x => x.TipoDocumento).AsQueryable().AsNoTracking();
+
+                if (!string.IsNullOrEmpty(nomeMorador))
+                {
+                    morador = morador.Where(x => x.Nome.StartsWith(nomeMorador));
+                }
+
+                var moradores = await morador.OrderBy(x => x.Id).ToListAsync();
+
 
                 return Ok(new ReturnViewModel<List<Morador>>(moradores));
             }
@@ -27,7 +35,7 @@ namespace Siscon_API_Backend.Controllers
                 return StatusCode(500, new ReturnViewModel<string>($"Siscon_API_Backend - Class MoradorController {this.GetType().Name} Code 01 - {ex.Message + ex.StackTrace}"));
             }
         }
-        [HttpGet("v1/predio/{id}")]
+        [HttpGet("v1/morador/{id}")]
         public async Task<IActionResult> GetLogin([FromRoute] int id, [FromServices] SisconDataContext Dbcontext)
         {
             try

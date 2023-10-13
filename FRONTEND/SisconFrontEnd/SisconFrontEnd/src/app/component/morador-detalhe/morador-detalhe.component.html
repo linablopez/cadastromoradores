@@ -1,0 +1,79 @@
+<div class="containerApartamento">
+  <div class="row">
+    <span class="link-voltar" routerLink="/moradores">
+      <mat-icon>arrow_back</mat-icon>
+      Voltar
+    </span>
+  </div>
+  <div class="apartamento-form">
+    <h1 style="font-size: 28px;"><strong>Morador</strong></h1>
+
+    <div class="center-content">
+      <div class="input-field col s2 espaco">
+        <label style="font-size: 1em;" class="active" for="nome">Nome</label>
+        <input style="" id="nome" type="text" class="validate"
+               [(ngModel)]="nome" maxlength="200">
+      </div>
+
+      <div class="input-field col s2 espaco" style="height:15px !important">
+        <label style="font-size: 1em;" class="active" for="andar">Tipo Documento</label>
+        <mat-form-field class="meu-form-field">
+          <!--<mat-label>Prédio</mat-label>-->
+          <select matNativeControl required [(ngModel)]="tipoDocumentoId">
+            <option *ngFor="let tipoDocumento of tiposDocumentos" [value]="tipoDocumento.id">{{ tipoDocumento.descricao }}</option>
+          </select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-field col s2 espaco">
+        <label style="font-size: 1em;" class="active" for="numeroDocumento">Número Documento</label>
+        <input style="" id="numeroDocumento" type="text" class="validate"
+               [(ngModel)]="numeroDocumento" maxlength="20">
+      </div>
+
+      <mat-form-field>
+        <mat-label class="input-field col s2 espaco">Data de Nascimento</mat-label>
+        <input class="input-field col s2 espaco" matInput [matDatepicker]="dp1" disabled [(ngModel)]="dataNascimento" name="dataNascimento" dateFormat>
+        <mat-datepicker-toggle class="input-field col s2 espaco" matIconSuffix [for]="dp1"></mat-datepicker-toggle>
+        <mat-datepicker class="input-field col s2 espaco" #dp1 disabled="false"></mat-datepicker>
+      </mat-form-field>
+
+    </div>
+    <div class="center-content">
+
+      <div class="input-field col s2 espaco">
+        <label style="font-size: 1em;" class="active" for="idade">Idade</label>
+        <input style="" id="idade" type="text" class="validate"
+               [(ngModel)]="idade" maxlength="3">
+      </div>
+
+      <div class="input-field col s2 espaco" style="height:15px !important">
+        <label style="font-size: 1em;" class="active" for="andar">Sexo</label>
+        <mat-form-field class="meu-form-field">
+          <!--<mat-label>Prédio</mat-label>-->
+          <select matNativeControl required [(ngModel)]="sexoId">
+            <option *ngFor="let sexo of sexos" [value]="sexo.id" >{{ sexo.descricao }}</option>
+          </select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-field col s2 espaco">
+        <label style="font-size: 1em;" class="active" for="idade">Telefone</label>
+        <input style="" id="telefone" type="text" class="validate"
+               [(ngModel)]="telefone" maxlength="20">
+      </div>
+
+      <div class="input-field col s2 espaco">
+        <label style="font-size: 1em;" class="active" for="idade">E-mail</label>
+        <input style="" id="email" type="text" class="validate"
+               [(ngModel)]="email" maxlength="100">
+      </div>
+    </div>
+    <div class="center-content">
+      <div class="input-field col s2" style="margin-bottom: 20px;">
+        <button id="botao-incluir" #botaoIncluir class="btn waves-effect waves-light btn-confirmar" style="margin-left: 20px" (click)="incluirDadosMorador()">Incluir</button>
+        <button id="botao-alterar" #botaoAlterar class="btn waves-effect waves-light btn-confirmar" style="margin-left: 20px" (click)="alterarDadosMorador()">Alterar</button>
+      </div>
+    </div>
+   </div>
+  </div>

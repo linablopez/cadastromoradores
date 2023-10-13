@@ -23,7 +23,7 @@ export class ApartamentoComponent implements OnInit {
 
   dataSource = new MatTableDataSource<any>;
 
-  pageSize = 5;
+  pageSize = 10;
 
   pageIndex = 0;
 

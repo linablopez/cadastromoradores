@@ -20,7 +20,7 @@ export class ApartamentoDetalheComponent {
   apartamento: Apartamento;
   apartamentoId: string;
   predios: Predio[];
-  predioSelected: Predio | undefined;;
+  predioSelected: Predio | undefined;
   numeroApartamento: string = "";
   andarApartamento: string = "";
   predioId: string;
@@ -31,6 +31,8 @@ export class ApartamentoDetalheComponent {
   ngOnInit(): void {
     let botaoIncluir = <HTMLButtonElement>document.getElementById("botao-incluir");
     let botaoAlterar = <HTMLButtonElement>document.getElementById("botao-alterar");
+
+    this.consultarPredios();
 
     if (sessionStorage.getItem("SISCON_MANIPULADOR_CURRENT") != "") {
       if (sessionStorage.getItem("SISCON_MANIPULADOR_CURRENT") == "UPDATE")
@@ -63,8 +65,6 @@ export class ApartamentoDetalheComponent {
         }
       }
     }
-
-    this.consultarPredios();
   }
 
   public consultarPredios() {

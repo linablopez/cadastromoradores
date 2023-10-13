@@ -18,7 +18,7 @@ namespace Siscon_API_Backend.Controllers
         {
             try
             {
-                var apartamento = Dbcontext.Apartamentos.Include(x => x.Predio).AsQueryable();
+                var apartamento = Dbcontext.Apartamentos.Include(x => x.Predio).AsQueryable().AsNoTracking();
 
                 if (numeroApartamento > 0)
                 {

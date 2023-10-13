@@ -40,6 +40,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ApartamentoDetalheComponent } from './component/apartamento-detalhe/apartamento-detalhe.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MoradorComponent } from './component/morador/morador.component';
+import { MoradorDetalheComponent } from './component/morador-detalhe/morador-detalhe.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ApartamentoComponent,
     NavBarComponent,
     SideNavBarComponent,
-    ApartamentoDetalheComponent
+    ApartamentoDetalheComponent,
+    MoradorComponent,
+    MoradorDetalheComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +85,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTableModule,
     MatPaginatorModule,
     MatToolbarModule,
-    MatTooltipModule,
+    MatTooltipModule
   ],
   providers: [
     LoginService,
