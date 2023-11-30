@@ -7,6 +7,8 @@ import { ApartamentoComponent } from './component/apartamento/apartamento.compon
 import { ApartamentoDetalheComponent } from './component/apartamento-detalhe/apartamento-detalhe.component';
 import { MoradorComponent } from './component/morador/morador.component';
 import { MoradorDetalheComponent } from './component/morador-detalhe/morador-detalhe.component';
+import { MoradorApartamentoComponent } from './component/morador-apartamento/morador-apartamento.component';
+import { MoradorApartamentoDetalheComponent } from './component/morador-apartamento-detalhe/morador-apartamento-detalhe.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'moradores', canActivate: [AuthGuard], component: MoradorComponent },
   { path: 'morador/alteracao/:id', canActivate: [AuthGuard], component: MoradorDetalheComponent },
   { path: 'morador/inclusao', canActivate: [AuthGuard], component: MoradorDetalheComponent },
+  { path: 'moradoresApartamentos', canActivate: [AuthGuard], component: MoradorApartamentoComponent },
+  { path: 'moradoresApartamentos/inclusao', canActivate: [AuthGuard], component: MoradorApartamentoDetalheComponent },
   {
     path: 'home', component: HomeComponent, canActivate: [AuthGuard], children: [
     ]

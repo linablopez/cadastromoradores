@@ -14,18 +14,37 @@ namespace Siscon_API_Backend.Controllers
     public class MoradorApartamentoController : ControllerBase
     {
         [HttpGet("v1/moradoresApartamentos")]
-        public async Task<IActionResult> GetAll([FromServices] SisconDataContext Dbcontext)
+        public async Task<IActionResult> GetAll([FromQuery] string? nomeMorador, [FromQuery] int? numeroApartamento, [FromQuery] string? nomePredio,
+                                               [FromServices] SisconDataContext Dbcontext)
         {
             try
             {
-                var moradoresApartamentos = await Dbcontext.MoradoresApartamentos.AsNoTracking()
+                IQueryable<MoradorApartamento> query = Dbcontext.MoradoresApartamentos
                                                                                  .Include(x => x.Morador)
                                                                                   .ThenInclude(t => t.TipoDocumento)
                                                                                  .Include(x => x.Morador)
                                                                                   .ThenInclude(s => s.Sexo)
                                                                                  .Include(x => x.Apartamento)
                                                                                   .ThenInclude(p => p.Predio)
-                                                                                 .ToListAsync();
+                                                                                 .AsNoTracking();
+
+                if (!string.IsNullOrEmpty(nomeMorador)) {
+
+                    query = query.Where(x => x.Morador.Nome.Contains(nomeMorador));
+                }
+
+                if (numeroApartamento != null)
+                {
+                    query = query.Where(x => x.Apartamento.NumeroApto.Value.ToString().Contains(numeroApartamento.ToString()));
+                }
+
+                if (!string.IsNullOrEmpty(nomePredio))
+                {
+
+                    query = query.Where(p => p.Apartamento.Predio.NomePredio.Contains(nomePredio));
+                }
+
+                var moradoresApartamentos = await query.ToListAsync();
 
                 return Ok(new ReturnViewModel<List<MoradorApartamento>>(moradoresApartamentos));
             }

@@ -1,0 +1,37 @@
+<div class="containerApartamento">
+  <div class="row">
+    <span class="link-voltar" routerLink="/apartamentos">
+      <mat-icon>arrow_back</mat-icon>
+      Voltar
+    </span>
+  </div>
+  <div class="apartamento-form">
+    <h1 style="font-size: 28px;"><strong>Morador x Apartamento</strong></h1>
+
+    <div class="center-content">
+
+      <!--<div class="input-field col s2 espaco" style="height:15px !important">
+        <label style="font-size: 1em;" class="active" for="andar">Moradores</label>
+        <mat-form-field class="meu-form-field">
+          <select matNativeControl required [(ngModel)]="moradorId">
+            <option *ngFor="let morador of moradores" [value]="morador.id">{{ morador.nome }}</option>
+          </select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-field col s2 espaco" style="height:15px !important">
+        <label style="font-size: 1em;" class="active" for="andar">Apartamentos</label>
+        <mat-form-field class="meu-form-field">
+          <select matNativeControl required [(ngModel)]="apartamentoId">
+            <option *ngFor="let apartamento of apartamentos" [value]="apartamento.id">{{ apartamentos.numeroApto }}</option>
+          </select>
+        </mat-form-field>
+      </div>-->
+
+      <div class="input-field col s2" style="margin-bottom: 20px;">
+        <button id="botao-incluir" #botaoIncluir class="btn waves-effect waves-light btn-confirmar" style="margin-left: 20px" (click)="incluirDadosMoradorApartamento()">Incluir</button>
+      </div>
+    </div>
+
+  </div>
+</div>

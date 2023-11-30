@@ -1,0 +1,66 @@
+.containerMorador {
+  width: 97%;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 1em;
+  text-align: center;
+  color: #2446ff;
+  margin: 30px;
+}
+
+.apartamento-form {
+  width: 92%;
+}
+
+.campo-select-borda {
+  border-bottom: 1px solid black;
+  padding: 2px;
+}
+
+.lista-consulta {
+  height: 40vh;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-confirmar {
+  background-color: #2446ff;
+  font-size: 0.6em;
+  margin-top: 15px;
+}
+
+.espaco {
+  margin-right: 20px;
+}
+
+.link-voltar {
+  color: #2446ff;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+  .link-voltar mat-icon {
+    vertical-align: middle;
+  }
+
+  .link-voltar span {
+    vertical-align: middle;
+  }
+
+.select-predio {
+  width: 250px;
+  font-size: 0.8em;
+  margin-top: -3px;
+}
+
+.meu-form-field {
+  height: 69px;
+}

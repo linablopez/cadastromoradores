@@ -42,6 +42,8 @@ import { ApartamentoDetalheComponent } from './component/apartamento-detalhe/apa
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MoradorComponent } from './component/morador/morador.component';
 import { MoradorDetalheComponent } from './component/morador-detalhe/morador-detalhe.component';
+import { MoradorApartamentoComponent } from './component/morador-apartamento/morador-apartamento.component';
+import { MoradorApartamentoDetalheComponent } from './component/morador-apartamento-detalhe/morador-apartamento-detalhe.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { MoradorDetalheComponent } from './component/morador-detalhe/morador-det
     SideNavBarComponent,
     ApartamentoDetalheComponent,
     MoradorComponent,
-    MoradorDetalheComponent
+    MoradorDetalheComponent,
+    MoradorApartamentoComponent,
+    MoradorApartamentoDetalheComponent
   ],
   imports: [
     BrowserModule,

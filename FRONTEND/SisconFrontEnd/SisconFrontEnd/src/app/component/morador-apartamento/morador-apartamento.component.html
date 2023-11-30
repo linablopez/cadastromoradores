@@ -1,0 +1,81 @@
+<div class="containerMorador">
+  <div class="apartamento-form">
+    <h1 style="font-size: 28px;"><strong>Morador Apartamento</strong></h1>
+
+    <div class="center-content">
+      <div class="input-field col s2 espaco">
+        <label style="font-size: 0.8em;" class="active" for="numeroApto">Morador</label>
+        <input style="" id="nomeMorador" type="text" class="validate"
+               [(ngModel)]="nomeMorador">
+      </div>
+
+      <div class="input-field col s2 espaco">
+        <label style="font-size: 0.8em;" class="active" for="numeroApto">Apartamento</label>
+        <input style="" id="numeroApartamento" type="text" class="validate"
+               [(ngModel)]="numeroApartamento">
+      </div>
+
+      <div class="input-field col s2 espaco">
+        <label style="font-size: 0.8em;" class="active" for="numeroApto">Prédio</label>
+        <input style="" id="nomePredio" type="text" class="validate"
+               [(ngModel)]="nomePredio">
+      </div>
+
+      <button class="btn waves-effect waves-light btn-confirmar" (click)="botaoConsultar()">
+        Consultar
+      </button>
+    </div>
+    <br />
+    <div class="right-align">
+      <button class="btn waves-effect waves-light btn-confirmar" >
+        Incluir
+      </button>
+    </div>
+    <br />
+    <div class="lista-consulta table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef style="font-size: 0.8em; color: white">Id</th>
+          <td mat-cell *matCellDef="let item" style="font-size: 0.8em;">{{ item.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="morador.nome">
+          <th mat-header-cell *matHeaderCellDef style="font-size: 0.8em; color: white">Morador</th>
+          <td mat-cell *matCellDef="let item" style="font-size: 0.8em;">{{ item.morador.nome }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="apartamento.numeroApto">
+          <th mat-header-cell *matHeaderCellDef style="font-size: 0.8em; color: white">Apartamento</th>
+          <td mat-cell *matCellDef="let item" style="font-size: 0.8em;">{{ item.apartamento.numeroApto }}</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="apartamento.predio.nomePredio">
+          <th mat-header-cell *matHeaderCellDef style="font-size: 0.8em; color: white">Prédio</th>
+          <td mat-cell *matCellDef="let item" style="font-size: 0.8em;">{{ item.apartamento.predio.nomePredio }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="acaoExcluir" style="width:100px">
+          <th mat-header-cell *matHeaderCellDef style="font-size: 0.8em; color: white; width: 100px"> </th>
+          <td mat-cell *matCellDef="let item" style="font-size: 0.8em; width: 100px">
+            <button mat-icon-button (click)="excluirItem(item.id); $event.stopPropagation()" matTooltip="Excluir">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" style="background-color: #2446FF; height: 30px;">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            style="background-color: {{ row.id % 2 === 0 ? '#ffffff' : '#f2f2f2' }}; height: 30px">
+        </tr>
+      </table>
+    </div>
+    <div>
+      <mat-paginator #paginator class="demo-paginator" (page)="handlePageEvent($event)" [pageSize]="pageSize"
+                     showFirstLastButtons hidePageSize="false" [pageIndex]="pageIndex" aria-label="Select page">
+      </mat-paginator>
+    </div>
+  </div>
+</div>
